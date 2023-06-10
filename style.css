@@ -80,13 +80,22 @@ nav ul li{
 .songItems{
     display: flex;
     height: 50px;
-    width:100%;/*75*/
+    width:75%;/*75*/
     background-color: white;
     color: rgb(245, 12, 214);
     margin: 13px 0px;
     justify-content: space-between;
     align-items: center;
     border-radius: 12px;
+    padding-right: 9px;
+}
+.songListPlay{
+    display: flex;
+    justify-content: space-between;
+}
+.songItemPlay{
+    margin-left: 4px;
+    margin-right: 2px;
 }
 .songItems img{
     border-radius: 34px;
@@ -129,9 +138,6 @@ nav ul li{
         margin-left: 10px;
         position: absolute;
         left: 10px;
-        color: red;
-        background-color: blue;
-        
     }
     #duration1{
         width: 3vw;
@@ -140,11 +146,7 @@ nav ul li{
         margin-right: 3vw;
         position: absolute;
         right: 30px;
-    }
-    .body{
-        background-color: red;
-        color: green;
-    }  
+    } 
     .songItems{
         display: flex;
         height: 50px;
@@ -155,6 +157,7 @@ nav ul li{
         justify-content: space-between;
         align-items: center;
         border-radius: 12px;
+        padding-right: 9px;
     }
     #progressBar{
         margin-top: 10px;
