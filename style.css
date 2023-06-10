@@ -43,7 +43,7 @@ nav ul li{
 }
 .bottom{
     background-color:rgb(171, 28, 171);
-    position: sticky;
+    position: fixed;
     width: 100vw;
     height: 80px;
     bottom: 0px;
