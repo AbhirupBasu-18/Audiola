@@ -76,12 +76,12 @@ audioElement.addEventListener('loadedmetadata', function() {
 
 audioElement.addEventListener('timeupdate',x);
 
-myProgressBar.addEventListener('click',()=>{
+myProgressBar.addEventListener('change',()=>{
     //audioElement.removeEventListener('timeupdate',x, { passive: true });
-    
+    //console.log("hi");
     let r=false;
     var progress=myProgressBar.value;
-    //console.log(progress);
+    console.log(progress);
     audioElement.currentTime=parseFloat((progress*audioElement.duration)/100);
     r=true;
     //audioElement.addEventListener('timeupdate',x);
