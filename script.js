@@ -140,8 +140,9 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         }
         else{
             if(index!=songNumber+1){
-                audioElement.src=`songs/${index}.mp3`;
                 audioElement.currentTime=0;
+                audioElement.src=`songs/${index}.mp3`;
+                
                 audioElement.play();
                 songNumber=index-1;
                 name1.innerText=song[songNumber].songname;
