@@ -110,7 +110,7 @@ const makeAllPlays=()=>{
 Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
     element.addEventListener('click',(e)=>{
         //console.log(e.target);
-        makeAllPlays();
+        
         let index=e.target.id;
         //console.log(index);
         if(audioElement.paused){
@@ -136,7 +136,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
                 e.target.classList.remove('fa-circle-play');
                 e.target.classList.add('fa-circle-pause');
             }
-            
+            makeAllPlays();
         }
         else{
             if(index!=songNumber+1){
