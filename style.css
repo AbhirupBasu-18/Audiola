@@ -42,7 +42,7 @@ nav ul li{
 .bottom{
     background-color:rgb(171, 28, 171);
     position: sticky;
-    width: 100%;
+    width: 100vw;
     height: 80px;
     bottom: 0px;
     display: flex;
@@ -52,6 +52,7 @@ nav ul li{
     color: white;
     padding-bottom: 10px;
 }
+
 .icons{
     margin: 10px;
 }
@@ -60,7 +61,23 @@ nav ul li{
 }
 #progressBar{
     margin-top: 10px;
-    width: 80vw;   
+    width: 80vw;  
+    cursor: pointer; 
+}
+.time{
+    display: flex;
+}
+#start{
+    width: 3vw;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-left: 3vw;
+}
+#duration1{
+    width: 3vw;
+    margin-left: 30px;
+    margin-top: 10px;
+    margin-right: 3vw;
 }
 .songItemContainer{
     margin-top: 50px;
@@ -87,8 +104,11 @@ nav ul li{
 .timestamp i{
     cursor: pointer;
 }
-.songInfo{
+#songInfo{
     position: absolute;
+    font-family: 'Varela Round', sans-serif;
     left: 10vw;
-    opacity: 0;
+}
+.gif{
+    transition: opacity 0.4s ease-in;
 }

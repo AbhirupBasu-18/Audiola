@@ -24,71 +24,76 @@
                 <div class="songItems">
                     <img src="covers/1.jpg" alt="1">
                     <span>Kesariya</span>
-                    <span class="songListPlay"><span class="timestamp">04:28  <i class="fa-regular fa-circle-play"></i></span>
+                    <span class="songListPlay"><span class="timestamp">04:28  <i id="1" class="1 songItemPlay fa-regular fa-circle-play"></i></span>
                 </div>
                 <div class="songItems">
                     <img src="covers/2.jpg" alt="2">
                     <span>O Bedardeya</span>
-                    <span class="songListPlay"><span class="timestamp">02:51  <i class="fa-regular fa-circle-play"></i></span>
+                    <span class="songListPlay"><span class="timestamp">02:51  <i id="2" class="2 songItemPlay fa-regular fa-circle-play"></i></span>
                 </div>
                 <div class="songItems">
                     <img src="covers/3.jpg" alt="3">
                     <span>Apna Bana Le</span>
-                    <span class="songListPlay"><span class="timestamp">03:24  <i class="fa-regular fa-circle-play"></i></span>
+                    <span class="songListPlay"><span class="timestamp">03:24  <i id="3" class="3 songItemPlay fa-regular fa-circle-play"></i></span>
                 </div>
                 <div class="songItems">
                     <img src="covers/4.jpg" alt="4">
                     <span>Maan Meri Jaan</span>
-                    <span class="songListPlay"><span class="timestamp">03:14  <i class="fa-regular fa-circle-play"></i></span>
+                    <span class="songListPlay"><span class="timestamp">03:14  <i id="4" class="4 songItemPlay fa-regular fa-circle-play"></i></span>
                 </div>
                 <div class="songItems">
                     <img src="covers/5.jpg" alt="5">
                     <span>Calm Down</span>
-                    <span class="songListPlay"><span class="timestamp">03:59  <i class="fa-regular fa-circle-play"></i></span>
+                    <span class="songListPlay"><span class="timestamp">03:59  <i id="5" class="5 songItemPlay fa-regular fa-circle-play"></i></span>
                 </div>
                 <div class="songItems">
                     <img src="covers/6.jpg" alt="6">
                     <span>Rasiya</span>
-                    <span class="songListPlay"><span class="timestamp">04:25  <i class="fa-regular fa-circle-play"></i></span>
+                    <span class="songListPlay"><span class="timestamp">04:25  <i id="6" class="6 songItemPlay fa-regular fa-circle-play"></i></span>
                 </div>
                 <div class="songItems">
                     <img src="covers/7.jpg" alt="7">
                     <span>Pasoori</span>
-                    <span class="songListPlay"><span class="timestamp">03:44  <i class="fa-regular fa-circle-play"></i></span>
+                    <span class="songListPlay"><span class="timestamp">03:44  <i id="7" class="7 songItemPlay fa-regular fa-circle-play"></i></span>
                 </div>
                 <div class="songItems">
                     <img src="covers/8.jpg" alt="8">
                     <span>Shape of You</span>
-                    <span class="songListPlay"><span class="timestamp">04:24  <i class="fa-regular fa-circle-play"></i></span>
+                    <span class="songListPlay"><span class="timestamp">04:24  <i id="8" class="8 songItemPlay fa-regular fa-circle-play"></i></span>
                 </div>
                 <div class="songItems">
                     <img src="covers/9.jpg" alt="1">
                     <span>Mood</span>
-                    <span class="songListPlay"><span class="timestamp">02:30  <i class="fa-regular fa-circle-play"></i></span>
+                    <span class="songListPlay"><span class="timestamp">02:30  <i id="9" class="9 songItemPlay fa-regular fa-circle-play"></i></span>
                 </div>
                 <div class="songItems">
                     <img src="covers/10.jpg" alt="10">
                     <span>Shayad</span>
-                    <span class="songListPlay"><span class="timestamp">04:07  <i class="fa-regular fa-circle-play"></i></span>
+                    <span class="songListPlay"><span class="timestamp">04:07  <i id="10" class="10 songItemPlay fa-regular fa-circle-play"></i></span>
                 </div>
                 <div class="songItems">
                     <img src="covers/11.jpg" alt="11">
                     <span>Stay</span>
-                    <span class="songListPlay"><span class="timestamp">02:37  <i class="fa-regular fa-circle-play"></i></span>
+                    <span class="songListPlay"><span class="timestamp">02:37  <i id="11" class="11 songItemPlay fa-regular fa-circle-play"></i></span>
                 </div>
             </div>
         </div>
         <div class="songBanner"></div>
     </div>
     <div class="bottom">
-        <input type="range" name="range" id="progressBar" min="0" max="100">
+        <div class="time">
+        <div id="start">00:00</div>
+        <input type="range" name="range" id="progressBar" min="0" value="0" max="100" step="0.0000000000001">
+        <div id="duration1">04:28</div>
+    </div>
         <div class="icons">
-            <i class="fa-solid fa-backward-step fa-2x" style="margin-right: 10px;"></i>
-            <i class="fa-regular fa-circle-play fa-2x"></i>
-            <i class="fa-solid fa-forward-step fa-2x" style="margin-left: 10px;"></i>
+            <i class="fa-solid fa-backward-step fa-2x" id="prev" style="margin-right: 10px;"></i>
+            <i class="fa-regular fa-circle-play fa-2x" id="masterPlay"></i>
+            <i class="fa-solid fa-forward-step fa-2x" id="next" style="margin-left: 10px;"></i>
+            <i class="fa-solid fa-repeat fa-2x" id="loopicon" style="margin-left: 10px;"></i>
         </div>
-        <div class="songInfo">
-            <img src="images/playing.gif" alt="1" width="33px"><span id="info">Let me Love u</span>
+        <div id="songInfo">
+            <img src="images/playing.gif" alt="1" width="33px" id="gif" style="margin-right: 10px;"><span id="info">Kesariya</span>
         </div>
     </div>
     <script src="https://kit.fontawesome.com/e2b8dd009a.js" crossorigin="anonymous"></script>
