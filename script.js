@@ -56,6 +56,7 @@ masterPlay.addEventListener('click',(e)=>{
 function x(){
     //console.log(audioElement.currentTime);    
     let progress1=parseFloat((audioElement.currentTime/audioElement.duration)*100);
+    myProgressBar.value=0;
     myProgressBar.value=progress1;
     var s=audioElement.currentTime;
     var m = Math.floor(s / 60);
@@ -64,6 +65,8 @@ function x(){
     s = (s >= 10) ? s : "0" + s;
     //return m + ":" + s;
     document.getElementById('start').innerHTML=m + ":" + s;
+    console.log("timeupdate:",audioElement.currentTime);
+    
 }
 audioElement.addEventListener('loadedmetadata', function() {
     var s=audioElement.duration;
@@ -77,15 +80,18 @@ audioElement.addEventListener('loadedmetadata', function() {
 audioElement.addEventListener('timeupdate',x);
 
 myProgressBar.addEventListener('change',()=>{
-    //audioElement.removeEventListener('timeupdate',x, { passive: true });
+    console.log("mychange:",audioElement.currentTime);
+    audioElement.removeEventListener('timeupdate',x, { passive: true });
     //console.log("hi");
     let r=false;
     var progress=myProgressBar.value;
-    console.log(progress);
     audioElement.currentTime=parseFloat((progress*audioElement.duration)/100);
     r=true;
+    if(r){
+        audioElement.addEventListener('timeupdate',x);
+    }
+    console.log("change:",audioElement.currentTime);
     //audioElement.addEventListener('timeupdate',x);
-    //console.log(audioElement.currentTime);
 });
 //audioElement.addEventListener('timeupdate',x);
 
@@ -188,6 +194,7 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
     
 //Next Button
 document.getElementById('next').addEventListener('click',()=>{
+    myProgressBar.value='100';
     makeAllPlays();
     songNumber=(songNumber+1)%11;
     let index=songNumber+1;
@@ -205,6 +212,7 @@ document.getElementById('next').addEventListener('click',()=>{
 
 //Previous Button
 document.getElementById('prev').addEventListener('click',()=>{
+    myProgressBar.value='0';
     makeAllPlays();
     songNumber=(songNumber+11-1)%11;
     let index=songNumber+1;
