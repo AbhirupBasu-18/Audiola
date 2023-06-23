@@ -30,7 +30,7 @@ masterPlay.addEventListener('click',(e)=>{
     makeAllPlays();
     let index=songNumber+1;
     let needed=document.getElementById(`${index}`);
-    console.log("hi");
+   // console.log("hi");
     if(audioElement.paused){
         audioElement.play();
         masterPlay.classList.remove('fa-circle-play');
@@ -54,10 +54,16 @@ masterPlay.addEventListener('click',(e)=>{
 
 //progressBar
 function x(){
-    console.log(audioElement.currentTime);    
-    let progress1=parseFloat((audioElement.currentTime/audioElement.duration)*100).toPrecision(2);
-    myProgressBar.value=0;
-    myProgressBar.value=progress1;
+    //console.log(audioElement.currentTime);    
+    let progress1=parseFloat(((audioElement.currentTime*1.00)/audioElement.duration)*100).toFixed(2);
+    myProgressBar.value=0.00;
+    if(isNaN(progress1)){
+        myProgressBar.value=0.00;
+    }
+    else{
+        myProgressBar.value=progress1;
+    }
+    //console.log(myProgressBar.value);
     var s=audioElement.currentTime;
     var m = Math.floor(s / 60);
     m = (m >= 10) ? m : "0" + m;
@@ -65,7 +71,7 @@ function x(){
     s = (s >= 10) ? s : "0" + s;
     //return m + ":" + s;
     document.getElementById('start').innerHTML=m + ":" + s;
-    console.log("timeupdate:",audioElement.currentTime);
+    //console.log("timeupdate:",audioElement.currentTime);
     
 }
 audioElement.addEventListener('loadedmetadata', function() {
@@ -78,8 +84,9 @@ audioElement.addEventListener('loadedmetadata', function() {
 });
 
 myProgressBar.addEventListener('change',async(e)=>{
+    audioElement.removeEventListener('timeupdate',x, { passive: true });
     const data=await jobDone();
-    console.log(data);
+    //console.log(data);
     audioElement.addEventListener('timeupdate',x);
     //console.log("hi");
     /*let promise=new Promise((resolve, reject) => {
@@ -97,13 +104,15 @@ myProgressBar.addEventListener('change',async(e)=>{
 audioElement.addEventListener('timeupdate',x);
 //audioElement.addEventListener('timeupdate',x);
 function jobDone(){
-        console.log("mychange:",audioElement.currentTime);
-        audioElement.removeEventListener('timeupdate',x, { passive: true });
+        //console.log("mychange:",audioElement.currentTime);
+        //audioElement.removeEventListener('timeupdate',x, { passive: true });
         //console.log("hi");
         let r=false;
-        var progress=myProgressBar.value;
-        //console.log("chan");
-        audioElement.currentTime=parseInt((progress*audioElement.duration)/100);
+        let progress=parseFloat(1.00*myProgressBar.value).toFixed(2);
+        console.log(progress);
+        myProgressBar.value=progress;
+        audioElement.currentTime=parseFloat((progress*audioElement.duration)/100);
+        console.log(audioElement.currentTime);
         return Promise.resolve('Some Data');
 }
 
